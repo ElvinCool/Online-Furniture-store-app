@@ -10,16 +10,14 @@ function createWindow() {
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: true,  // Включи nodeIntegration для доступа к Node.js API
-      contextIsolation: false,  // Отключи contextIsolation, если используешь старую версию React или другие плагины
+      nodeIntegration: true,  
+      contextIsolation: false,  
     }
   });
 
-  // Открой клиентское приложение, собранное React
   mainWindow.loadURL('http://localhost:3000');
 }
 
-// Запускаем сервер
 function startServer() {
   const server = spawn('bash', ['-c', `source ${nvmCommand} && node server/index.js`]);
 
