@@ -1,0 +1,28 @@
+{
+  "name": "furniture-app", 
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd src && npm start",
+    "server": "node server/index.js",
+    "electron": "electron .",
+    "pack": "electron-builder --mac",
+    "dist": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "electron": "^36.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.example.electronapp",
+    "productName": "ElectronApp",
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
